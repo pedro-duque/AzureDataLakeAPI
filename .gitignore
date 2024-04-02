@@ -6,7 +6,7 @@ __pycache__/
 local.settings.json
 # C extensions
 *.so
-
+__blobstorage__/
 # Distribution / packaging
 .Python
 build/

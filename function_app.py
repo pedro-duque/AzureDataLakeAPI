@@ -21,6 +21,7 @@ def AzureDataLakeAPI(req: func.HttpRequest) -> func.HttpResponse:
 
     if path:
         import os
+        logging.info(os.environ["ConnectionStrings:AzureDataLake"])
         connection_azure_dl = DuckDBToAzureDL(os.environ["ConnectionStrings:AzureDataLake"])
         query = connection_azure_dl.ReadDLTable(path, req.params.get('format'))
         
