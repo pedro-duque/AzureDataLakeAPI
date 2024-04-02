@@ -21,9 +21,8 @@ def AzureDataLakeAPI(req: func.HttpRequest) -> func.HttpResponse:
 
     if path:
         import os
-        for name, value in os.environ.items():
-            logging.info("{0}: {1}".format(name, value))
-        connection_azure_dl = DuckDBToAzureDL("DefaultEndpointsProtocol=https;AccountName=dlfaculdade1470964;AccountKey=v7NhkacyFN3ZmRL6M+WyLYiZwhdUvuB86yvJkWAtvnOZVmB/Oy59jVWs8A8TN0G5e5E5o9oLvBjI+AStt2DA2A==;EndpointSuffix=core.windows.net")
+        
+        connection_azure_dl = DuckDBToAzureDL(os.environ["CUSTOMCONNSTR_AzureDataLake"])
         query = connection_azure_dl.ReadDLTable(path, req.params.get('format'))
         
         if query["Status"] == True:
