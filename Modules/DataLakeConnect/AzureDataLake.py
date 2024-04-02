@@ -29,10 +29,3 @@ class DuckDBToAzureDL:
         
         else:
             return {"Status": False, "Error": "Data format not yet supported"}
-
-
-
-#AzureDL = DuckDBToAzureDL("DefaultEndpointsProtocol=https;AccountName=dlfaculdade1470964;AccountKey=v7NhkacyFN3ZmRL6M+WyLYiZwhdUvuB86yvJkWAtvnOZVmB/Oy59jVWs8A8TN0G5e5E5o9oLvBjI+AStt2DA2A==;EndpointSuffix=core.windows.net")
-#query = AzureDL.ReadDLTable("staging/alunos/", "parquet")
-#print(query["Status"])
-#print(query["Dataframe"].head())
